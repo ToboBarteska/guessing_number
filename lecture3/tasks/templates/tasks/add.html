@@ -1,0 +1,20 @@
+{% extends "tasks/layout.html" %}
+
+
+{% block body %}
+
+    <h1>pridat ukoly</h1>
+    {% csrf_token %}
+        {{ form }}
+
+    <ul>
+        <form>
+            <input type="submit" value="Přidat ůkol">
+        </form>
+    </ul>
+    {% endblock  %}
+
+
+
+
+</html>

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <header>
+    <h1>Hádej číslo!</h1>
+    <p class="between">(Mezi 1 a 999)</p>
+    <div class="number">?</div>
+  </header>
+  <main>
+    <section class="left">
+      <form method="post">
+        {% csrf_token %}
+        <input type="number" class="guess" name="guess" min="0" max="999" required>
+        <br><br>
+        <button class="btn check" type="submit">Odešli</button>
+      </form>
+    </section>
+    <section class="right">
+      {% if message %}
+        <p class="message">{{ message }}</p>
+      {% endif %}
+    </section>
+  </main>
+{% endblock %}
